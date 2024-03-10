@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Display</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'sans-serif';
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="randomImage" src="" alt="Random Image">
+
+    <script>
+        // List of image URLs
+        var imageUrls = [
+            'imge/p1.jpg',
+            'imge/p2.jpg',
+            'imge/p3.jpg',
+            'imge/p4.jpg',
+            'imge/p5.jpg',
+            'imge/p1.jpg',
+            'imge/p2.jpg',
+            'imge/p8.jpg',
+            'imge/p9.jpg',
+            'imge/p10.jpg',
+            // Add more image URLs as needed
+        ];
+
+        // Function to display a random image
+        function displayRandomImage() {
+            // Generate a random index
+            var randomIndex = Math.floor(Math.random() * imageUrls.length);
+
+            // Get the random image URL
+            var randomImageUrl = imageUrls[randomIndex];
+
+            // Update the image source
+            document.getElementById('randomImage').src = randomImageUrl;
+        }
+
+        // Display a random image when the page loads
+        displayRandomImage();
+
+        // Change the random image every 4 seconds
+        setInterval(displayRandomImage, 1000);
+    </script>
+</body>
+
+</html>
